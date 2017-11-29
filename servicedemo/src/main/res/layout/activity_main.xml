@@ -21,4 +21,36 @@
         android:layout_height="wrap_content"
         android:onClick="stopService"
         android:text="Stop服务" />
+
+
+    <Button
+        android:id="@+id/bindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bindService"
+        android:text="bind服务" />
+
+    <Button
+        android:id="@+id/unBindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="unBindService"
+        android:text="unBind服务" />
+
+    <Button
+        android:id="@+id/getData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getData"
+        android:text="获取数据" />
+
+    <TextView
+        android:text="书"
+        android:id="@+id/text"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
 </LinearLayout>
