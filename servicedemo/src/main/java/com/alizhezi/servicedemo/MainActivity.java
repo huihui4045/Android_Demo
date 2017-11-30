@@ -1,6 +1,8 @@
 package com.alizhezi.servicedemo;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -74,5 +76,20 @@ public class MainActivity extends AppCompatActivity {
     public void getData(View view){
 
         viewById.setText(""+serviceDemo.getCount());
+    }
+
+    public class UserBroadcastReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            if (viewById!=null){
+
+                viewById.setText("接收到了消息");
+            }else {
+
+                Log.e(TAG,"MainActivity 已经销毁");
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alizhezi.servicedemo">
+    package="com.alizhe.broadcastdemo">
+
 
     <application
         android:allowBackup="true"
@@ -16,13 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".ServiceDemo" />
 
-        <receiver android:name=".MainActivity$UserBroadcastReceiver"
-            android:exported="true">
-
+        <receiver android:name=".MainActivity$ManBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.alizhe.data"/>
+                <action android:name="com.alizhezi.data.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".WomanReceiver">
+            <intent-filter>
+                <action android:name="com.alizhezi.data.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
     </application>
