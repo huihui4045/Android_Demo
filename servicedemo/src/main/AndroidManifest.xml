@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alizhezi.servicedemo">
 
+    <uses-permission android:name="com.huihui.permission.XXXX"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,12 +21,21 @@
         <service android:name=".ServiceDemo" />
 
         <receiver android:name=".MainActivity$UserBroadcastReceiver"
+            android:permission="com.huihui.permission.XXXX"
             android:exported="true">
 
             <intent-filter>
-                <action android:name="com.alizhe.data"/>
+                <action android:name="com.alizhezi.data.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
+
+        <!--<receiver android:name=".StickyBroadcastReceiver">
+
+            <intent-filter>
+                <action android:name="com.alizhezi.data.MY_STICKY"/>
+            </intent-filter>
+
+        </receiver>-->
     </application>
 
 </manifest>

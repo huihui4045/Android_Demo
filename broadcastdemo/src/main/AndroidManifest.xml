@@ -3,6 +3,15 @@
     package="com.alizhe.broadcastdemo">
 
 
+    <permission android:name = "com.huihui.permission.XXXX"/>
+
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="com.huihui.permission.XXXX"/>
+
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,14 +27,14 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MainActivity$ManBroadcastReceiver">
-            <intent-filter>
+        <receiver android:name=".MainActivity$ManBroadcastReceiver" >
+            <intent-filter android:priority="999">
                 <action android:name="com.alizhezi.data.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
 
         <receiver android:name=".WomanReceiver">
-            <intent-filter>
+            <intent-filter android:priority="400">
                 <action android:name="com.alizhezi.data.MY_BROADCAST"/>
             </intent-filter>
         </receiver>

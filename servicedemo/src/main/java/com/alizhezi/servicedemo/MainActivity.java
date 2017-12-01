@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -23,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private String TAG=this.getClass().getSimpleName();
     private TextView viewById;
 
+
+    private StickyBroadcastReceiver mStickyBroadcastReceiver;
+
+
+    private Intent intentService;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         viewById = ((TextView) findViewById(R.id.text));
 
         intent = new Intent(this, ServiceDemo.class);
+
+        intentService=new Intent(MainActivity.this,MyIntentService.class);
 
         intent.putExtra("data", "来自Activity");
 
@@ -50,16 +60,40 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG,"onServiceDisconnected:"+name.getClassName());
             }
         };
+
+
+        mStickyBroadcastReceiver=new StickyBroadcastReceiver();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        IntentFilter intentFilter=new IntentFilter("com.alizhezi.data.MY_STICKY");
+
+        registerReceiver(mStickyBroadcastReceiver,intentFilter);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        unregisterReceiver(mStickyBroadcastReceiver);
+    }
 
     public void startService(View view) {
 
-        startService(intent);
+        //startService(intent);
+
+        startService(intentService);
     }
 
     public void stopService(View view) {
-        stopService(intent);
+       // stopService(intent);
+
+        stopService(intentService);
 
     }
 
@@ -78,18 +112,15 @@ public class MainActivity extends AppCompatActivity {
         viewById.setText(""+serviceDemo.getCount());
     }
 
-    public class UserBroadcastReceiver extends BroadcastReceiver{
+    public static class UserBroadcastReceiver extends BroadcastReceiver{
 
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            if (viewById!=null){
 
-                viewById.setText("接收到了消息");
-            }else {
+            Log.e("MainActivity","收到了夸应用的广播");
 
-                Log.e(TAG,"MainActivity 已经销毁");
-            }
+
         }
     }
 }

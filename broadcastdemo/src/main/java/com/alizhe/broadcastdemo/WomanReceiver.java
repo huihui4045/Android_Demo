@@ -13,6 +13,11 @@ public class WomanReceiver extends BroadcastReceiver  {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.e("WomanReceiver","  WomanReceiver  onReceive");
+        Log.e("WomanReceiver","  WomanReceiver  onReceive   400");
+
+
+      //  String msg=intent.getStringExtra("data");
+
+      //Log.e("WomanReceiver",msg);
     }
 }
