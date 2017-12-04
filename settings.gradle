@@ -1,1 +1,1 @@
-include ':app', ':schemedemo', ':servicedemo', ':broadcastdemo', ':handlerdemo'
+include ':app', ':schemedemo', ':servicedemo', ':broadcastdemo', ':handlerdemo', ':android_viewdemo'
