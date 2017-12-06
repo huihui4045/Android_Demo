@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/handlerdemo" />
             <option value="$PROJECT_DIR$/schemedemo" />
             <option value="$PROJECT_DIR$/servicedemo" />
+            <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
