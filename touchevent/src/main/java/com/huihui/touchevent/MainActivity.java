@@ -1,13 +1,15 @@
 package com.huihui.touchevent;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 
 public class MainActivity extends AppCompatActivity {
 
     private String TAG="MainActivity";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
