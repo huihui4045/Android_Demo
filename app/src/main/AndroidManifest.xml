@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alizhezi.demo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,7 +35,7 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".OkhttpActivity">
 
 
         </activity>
