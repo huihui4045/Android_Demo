@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private   DemoInfo[] DEMOS = {
             new DemoInfo("网络请求OKhttp使用与源码分析", "网络请求OKhttp使用与源码分析", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("网络请求Retrofit使用与源码分析", "网络请求Retrofit使用与源码分析", RetrofitActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),

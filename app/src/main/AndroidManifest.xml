@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alizhezi.demo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,23 +22,18 @@
                     android:scheme="xl" />
 
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
 
                 <!-- 以下几行必须设计 -->
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <category android:name="android.intent.category.DEFAULT"/>
-
-
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".OkhttpActivity">
-
-
-        </activity>
+        <activity android:name=".OkhttpActivity"></activity>
+        <activity android:name=".RetrofitActivity"></activity>
     </application>
 
 </manifest>
