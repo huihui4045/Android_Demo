@@ -32,34 +32,29 @@ public class StringConverterFactory extends Converter.Factory {
     public Converter<ResponseBody, ?> responseBodyConverter(Type type, Annotation[] annotations, Retrofit retrofit) {
 
 
-        return new StringResponseBodyConverter<UserBean>();
+        return new StringResponseBodyConverter<>();
     }
 
     @Override
     public Converter<?, RequestBody> requestBodyConverter(Type type, Annotation[] parameterAnnotations, Annotation[] methodAnnotations, Retrofit retrofit) {
-        return new JsonRequestBodyConverter<>();
+
+
+        Log.e("requestBodyConverter","发起请求");
+
+        return super.requestBodyConverter(type, parameterAnnotations, methodAnnotations, retrofit);
     }
-
-
-
-
-
 
     static class   StringResponseBodyConverter<T> implements Converter<ResponseBody, T>{
 
         @Override
         public T convert(ResponseBody value) throws IOException {
 
-            UserBean userBean=new UserBean();
 
-            userBean.setAge(20);
-
-            userBean.setName("灰灰");
 
             Log.e("ResponseBodyConverter","StringResponseBodyConverter");
 
 
-            return (T) userBean;
+            return (T) value.string();
         }
     }
 

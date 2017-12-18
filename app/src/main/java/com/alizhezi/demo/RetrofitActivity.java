@@ -43,22 +43,22 @@ public class RetrofitActivity extends AppCompatActivity {
 
         IpService ipService = retrofit.create(IpService.class);
 
-        Call<UserBean> call = ipService.getIpInfo("18514476718");
+        Call<String> call = ipService.getIpInfo("18514476718");
 
         //call.execute();
 
-        call.enqueue(new Callback<UserBean>() {
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
 
 
                 if (response!=null &&response.isSuccessful()){
 
-                    UserBean body = response.body();
 
-                    if (body!=null){
 
-                        Log.e(TAG, body.toString());
+                    if (response.body()!=null){
+
+                        Log.e(TAG, response.body().toString());
                     }
 
 
@@ -66,7 +66,7 @@ public class RetrofitActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<UserBean> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
 
             }
         });
