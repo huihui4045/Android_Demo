@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitActivity extends AppCompatActivity {
 
@@ -29,7 +30,10 @@ public class RetrofitActivity extends AppCompatActivity {
 
         Retrofit.Builder builder=new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(StringConverterFactory.create());
+
+                .addConverterFactory(StringConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create());
+
 
 
          retrofit = builder.build();
@@ -59,6 +63,8 @@ public class RetrofitActivity extends AppCompatActivity {
                     if (response.body()!=null){
 
                         Log.e(TAG, response.body().toString());
+
+                        Log.e(TAG,"thrad"+Thread.currentThread().getName());
                     }
 
 
