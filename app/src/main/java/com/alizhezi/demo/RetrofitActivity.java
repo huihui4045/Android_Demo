@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.alizhezi.demo.covert.FastJsonConverterFactory;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitActivity extends AppCompatActivity {
 
@@ -31,8 +32,8 @@ public class RetrofitActivity extends AppCompatActivity {
         Retrofit.Builder builder=new Retrofit.Builder()
                 .baseUrl(BASE_URL)
 
-                .addConverterFactory(StringConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create());
+                .addConverterFactory(FastJsonConverterFactory.create());
+                //;.addCallAdapterFactory()
 
 
 
@@ -47,14 +48,15 @@ public class RetrofitActivity extends AppCompatActivity {
 
         IpService ipService = retrofit.create(IpService.class);
 
-        Call<String> call = ipService.getIpInfo("18514476718");
+        Call<ResultBean> call = ipService.getIpInfo("18514476718");
 
         //call.execute();
 
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<ResultBean>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<ResultBean> call, Response<ResultBean> response) {
 
+                Log.e(TAG,"thrad"+Thread.currentThread().getName());
 
                 if (response!=null &&response.isSuccessful()){
 
@@ -64,7 +66,6 @@ public class RetrofitActivity extends AppCompatActivity {
 
                         Log.e(TAG, response.body().toString());
 
-                        Log.e(TAG,"thrad"+Thread.currentThread().getName());
                     }
 
 
@@ -72,7 +73,7 @@ public class RetrofitActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<ResultBean> call, Throwable t) {
 
             }
         });

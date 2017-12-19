@@ -14,7 +14,7 @@ public interface IpService {
 
 
     @GET("cc/json/mobile_tel_segment.htm")
-    Call<String> getIpInfo(@Query("tel")String ip);
+    Call<ResultBean> getIpInfo(@Query("tel")String ip);
 
   /*  @GET("cc/json/mobile_tel_segment.htm")
     Call<String> getIpInfo(@Body IP ip);*/

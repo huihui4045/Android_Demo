@@ -32,8 +32,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".OkhttpActivity"></activity>
-        <activity android:name=".RetrofitActivity"></activity>
+        <activity android:name=".OkhttpActivity" />
+        <activity android:name=".RetrofitActivity" />
+        <activity android:name=".butterknife.ButterKnifeActivity"></activity>
     </application>
 
 </manifest>

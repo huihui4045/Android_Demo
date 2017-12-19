@@ -16,6 +16,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alizhezi.demo.butterknife.ButterKnifeActivity;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private   DemoInfo[] DEMOS = {
             new DemoInfo("网络请求OKhttp使用与源码分析", "网络请求OKhttp使用与源码分析", OkhttpActivity.class),
             new DemoInfo("网络请求Retrofit使用与源码分析", "网络请求Retrofit使用与源码分析", RetrofitActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("ButterKnifeActivity使用与源码分析", "ButterKnifeActivity使用与源码分析", ButterKnifeActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
