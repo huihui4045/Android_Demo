@@ -3,7 +3,6 @@ package com.alizhezi.demo;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
-
-import java.util.List;
+import com.alizhezi.demo.imageload.ImageLoadActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
 
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_demo);
 
-        Uri uri = getIntent().getData();
+       /* Uri uri = getIntent().getData();
         if (uri != null) {
             // 完整的url信息
             String url = uri.toString();
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             String goodsId = uri.getQueryParameter("goodsId");
             Log.e(TAG, "goodsId: " + goodsId);
         }
-
+*/
 
         mListView = ((ListView) findViewById(R.id.listView));
 
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             new DemoInfo("网络请求OKhttp使用与源码分析", "网络请求OKhttp使用与源码分析", OkhttpActivity.class),
             new DemoInfo("网络请求Retrofit使用与源码分析", "网络请求Retrofit使用与源码分析", RetrofitActivity.class),
             new DemoInfo("ButterKnifeActivity使用与源码分析", "ButterKnifeActivity使用与源码分析", ButterKnifeActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("图片加载框架", "图片加载框架", ImageLoadActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),

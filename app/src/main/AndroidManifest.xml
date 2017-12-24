@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="ADemo"
+        android:label="Demo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -15,26 +15,27 @@
         <!-- 要想在别的App上能成功调起APP,必须添加过滤器 xl://goods:8888/goodsDetail?goodsId=10011002 -->
         <activity android:name=".MainActivity">
             <intent-filter>
-                <data
+              <!--  <data
                     android:host="goods"
                     android:path="/goodsDetail"
                     android:port="8888"
-                    android:scheme="xl" />
+                    android:scheme="xl" />-->
 
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <!-- 以下几行必须设计 -->
+            <!--    &lt;!&ndash; 以下几行必须设计 &ndash;&gt;
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
         </activity>
         <activity android:name=".OkhttpActivity" />
         <activity android:name=".RetrofitActivity" />
-        <activity android:name=".butterknife.ButterKnifeActivity"></activity>
+        <activity android:name=".butterknife.ButterKnifeActivity" />
+        <activity android:name=".imageload.ImageLoadActivity"></activity>
     </application>
 
 </manifest>
