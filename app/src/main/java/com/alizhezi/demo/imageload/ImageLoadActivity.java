@@ -2,7 +2,10 @@ package com.alizhezi.demo.imageload;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -18,6 +21,24 @@ import butterknife.OnClick;
 import okhttp3.OkHttpClient;
 
 public class ImageLoadActivity extends AppCompatActivity {
+    private String TAG=this.getClass().getSimpleName();
+
+    int count;
+
+    private Handler mHandler;
+
+    private Runnable mRunnable = new Runnable() {
+
+        public void run() {
+            //为了方便 查看，我们用Log打印出来
+            Log.e(TAG, Thread.currentThread().getName() + " " +count++);
+
+//            setTitle("" +count);
+            //每2秒执行一次
+            mHandler.postDelayed(mRunnable, 2000);
+        }
+
+    };
 
     @BindView(R.id.imageView)
     ImageView imageView;
@@ -31,6 +52,16 @@ public class ImageLoadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_load);
 
         ButterKnife.bind(this);
+
+
+        HandlerThread handlerThread=new HandlerThread("aaaa");
+
+        handlerThread.start();
+
+        mHandler=new Handler(handlerThread.getLooper());
+
+
+        mHandler.post(mRunnable);
     }
 
 
@@ -47,7 +78,7 @@ public class ImageLoadActivity extends AppCompatActivity {
                 .load(imageUrl)
                  .placeholder(R.color.colorAccent)//预加载占位
                 .error(R.color.colorPrimary)//加载失败的颜色
-                .transform(new CustomTransformer())//设置图片转化器
+                //.transform(new CustomTransformer())//设置图片转化器
                 //要加载的View
                 .into(imageView);
 
@@ -56,6 +87,9 @@ public class ImageLoadActivity extends AppCompatActivity {
        Picasso picasso = new Picasso.Builder(this)
          .downloader(new OkHttp3Downloader(okHttpClient))
           .build();
+
+
+
 
 
     }
@@ -89,5 +123,15 @@ public class ImageLoadActivity extends AppCompatActivity {
         Picasso.with(this).load(imageUrl).into(view);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
+        //mHandler.removeCallbacks(null);
+
+        /****
+         * 防止内存泄漏
+         */
+        mHandler.removeCallbacksAndMessages(null);
+    }
 }
