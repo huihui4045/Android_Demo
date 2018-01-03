@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".base.AliZheZiApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Demo"
@@ -15,27 +16,35 @@
         <!-- 要想在别的App上能成功调起APP,必须添加过滤器 xl://goods:8888/goodsDetail?goodsId=10011002 -->
         <activity android:name=".MainActivity">
             <intent-filter>
-              <!--  <data
+
+                <!--
+                    <data
                     android:host="goods"
                     android:path="/goodsDetail"
                     android:port="8888"
-                    android:scheme="xl" />-->
+                    android:scheme="xl" />
+                -->
 
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
 
-            <!--    &lt;!&ndash; 以下几行必须设计 &ndash;&gt;
+                <!--
+                    &lt;!&ndash; 以下几行必须设计 &ndash;&gt;
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                -->
             </intent-filter>
         </activity>
         <activity android:name=".OkhttpActivity" />
         <activity android:name=".RetrofitActivity" />
         <activity android:name=".butterknife.ButterKnifeActivity" />
-        <activity android:name=".imageload.ImageLoadActivity"></activity>
+        <activity android:name=".imageload.ImageLoadActivity" />
+        <activity android:name=".leak.LeakCanaryActivity" />
+        <activity android:name=".activity.DemoActivity" />
+        <activity android:name=".activity.BActivity"></activity>
     </application>
 
 </manifest>

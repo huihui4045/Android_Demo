@@ -15,8 +15,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alizhezi.demo.activity.DemoActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
+import com.alizhezi.demo.leak.LeakCanaryActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
 
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_demo);
+
+
+        //LoginManager.getInstance(this).dealData();
 
        /* Uri uri = getIntent().getData();
         if (uri != null) {
@@ -79,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             new DemoInfo("网络请求Retrofit使用与源码分析", "网络请求Retrofit使用与源码分析", RetrofitActivity.class),
             new DemoInfo("ButterKnifeActivity使用与源码分析", "ButterKnifeActivity使用与源码分析", ButterKnifeActivity.class),
             new DemoInfo("图片加载框架", "图片加载框架", ImageLoadActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("LeakCanary检测内存泄漏及解决办法", "LeakCanary检测内存泄漏及解决办法", LeakCanaryActivity.class),
+            new DemoInfo("测试DemoActivity", "测试DemoActivity", DemoActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
