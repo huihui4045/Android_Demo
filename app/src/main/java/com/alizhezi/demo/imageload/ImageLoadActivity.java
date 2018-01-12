@@ -40,6 +40,8 @@ public class ImageLoadActivity extends AppCompatActivity {
 
     };
 
+    //D:\Android\android-6.0.0_r1\frameworks\base\services\core\java\com\android\server\am\ActivityRecord.java
+
     @BindView(R.id.imageView)
     ImageView imageView;
 
