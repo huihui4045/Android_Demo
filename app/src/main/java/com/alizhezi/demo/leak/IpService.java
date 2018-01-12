@@ -1,4 +1,6 @@
-package com.alizhezi.demo;
+package com.alizhezi.demo.leak;
+
+import com.alizhezi.demo.retrofit.ResultBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

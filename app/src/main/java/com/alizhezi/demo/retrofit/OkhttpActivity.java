@@ -1,9 +1,11 @@
-package com.alizhezi.demo;
+package com.alizhezi.demo.retrofit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.alizhezi.demo.R;
 
 import java.io.IOException;
 

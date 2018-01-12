@@ -1,26 +1,25 @@
 package com.alizhezi.demo;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.alizhezi.demo.activity.DemoActivity;
+import com.alizhezi.demo.adapter.DemoListAdapter;
+import com.alizhezi.demo.adapter.DemoListAdapter.DemoInfo;
+import com.alizhezi.demo.base.BaseListActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
+import com.alizhezi.demo.retrofit.OkhttpActivity;
+import com.alizhezi.demo.retrofit.RetrofitActivity;
+import com.alizhezi.demo.view.CustomBaseActivity;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
+public class MainActivity extends BaseListActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
 
     private String TAG="MainActivity";
     private ListView mListView;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_demo);
 
 
         //LoginManager.getInstance(this).dealData();
@@ -60,12 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 */
 
-        mListView = ((ListView) findViewById(R.id.listView));
-
-        mListView.setOnItemClickListener(this);
-
-        mListView.setAdapter(new DemoListAdapter());
-
+       mListView=getListView();
         mListView.setOnScrollListener(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -79,14 +72,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-    private   DemoInfo[] DEMOS = {
+    @Override
+    protected DemoInfo[] bindData() {
+        return DEMOS;
+    }
+
+    private   DemoListAdapter.DemoInfo[] DEMOS = {
             new DemoInfo("网络请求OKhttp使用与源码分析", "网络请求OKhttp使用与源码分析", OkhttpActivity.class),
             new DemoInfo("网络请求Retrofit使用与源码分析", "网络请求Retrofit使用与源码分析", RetrofitActivity.class),
             new DemoInfo("ButterKnifeActivity使用与源码分析", "ButterKnifeActivity使用与源码分析", ButterKnifeActivity.class),
             new DemoInfo("图片加载框架", "图片加载框架", ImageLoadActivity.class),
             new DemoInfo("LeakCanary检测内存泄漏及解决办法", "LeakCanary检测内存泄漏及解决办法", LeakCanaryActivity.class),
             new DemoInfo("测试DemoActivity", "测试DemoActivity", DemoActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("自定义View Demo", "自定义View多种例子", CustomBaseActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
@@ -109,28 +107,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     };
 
 
-    private DemoInfo [] getData(int size){
-        DemoInfo [] data=new DemoInfo[size];
 
 
-
-
-        return  data;
-    }
-
-
-
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent;
-        Class<? extends Activity> demoClass = DEMOS[position].demoClass;
-
-        intent = new Intent(MainActivity.this, demoClass);
-
-
-        this.startActivity(intent);
-    }
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -172,50 +150,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-
-    private class DemoListAdapter extends BaseAdapter {
-        public DemoListAdapter() {
-            super();
-        }
-
-        @Override
-        public View getView(int index, View convertView, ViewGroup parent) {
-            convertView = View.inflate(MainActivity.this, R.layout.demo_info_item, null);
-            TextView title = (TextView) convertView.findViewById(R.id.title);
-            //TextView desc = (TextView) convertView.findViewById(R.id.desc);
-            title.setText(DEMOS[index].title);
-            //desc.setText(DEMOS[index].desc);
-            if (index >= 25) {
-                title.setTextColor(Color.YELLOW);
-            }
-            return convertView;
-        }
-
-        @Override
-        public int getCount() {
-            return DEMOS.length;
-        }
-
-        @Override
-        public Object getItem(int index) {
-            return DEMOS[index];
-        }
-
-        @Override
-        public long getItemId(int id) {
-            return id;
-        }
-    }
-
-    private static class DemoInfo {
-        private final String title;
-        private final String desc;
-        private final Class<? extends Activity> demoClass;
-
-        public DemoInfo(String title, String desc, Class<? extends Activity> demoClass) {
-            this.title = title;
-            this.desc = desc;
-            this.demoClass = demoClass;
-        }
-    }
 }

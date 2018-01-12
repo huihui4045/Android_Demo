@@ -1,4 +1,4 @@
-package com.alizhezi.demo;
+package com.alizhezi.demo.retrofit;
 
 /**
  * Created by molu_ on 2017/12/19.
