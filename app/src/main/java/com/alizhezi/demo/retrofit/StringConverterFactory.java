@@ -1,4 +1,4 @@
-package com.alizhezi.demo;
+package com.alizhezi.demo.retrofit;
 
 import android.util.Log;
 

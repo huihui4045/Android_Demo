@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.alizhezi.demo.OkhttpActivity">
+    tools:context="com.alizhezi.demo.retrofit.OkhttpActivity">
 
     <Button
         android:text="异步get请求"

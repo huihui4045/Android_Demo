@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.alizhezi.demo.retrofit.RetrofitActivity">
+    tools:context="com.alizhezi.demo.view.CustomBaseActivity">
 
     <Button
+        android:id="@+id/btn_bezier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="getAsynRetrofit"
-        android:text="异步请求" />
+        android:text="贝塞尔曲线简单实用" />
 
 </LinearLayout>
