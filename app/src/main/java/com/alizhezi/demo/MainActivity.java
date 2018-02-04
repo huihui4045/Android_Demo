@@ -13,11 +13,13 @@ import com.alizhezi.demo.adapter.DemoListAdapter;
 import com.alizhezi.demo.adapter.DemoListAdapter.DemoInfo;
 import com.alizhezi.demo.base.BaseListActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
+import com.alizhezi.demo.fragment.FragmentDemoActivity;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
 import com.alizhezi.demo.retrofit.OkhttpActivity;
 import com.alizhezi.demo.retrofit.RetrofitActivity;
 import com.alizhezi.demo.view.CustomBaseActivity;
+
 
 public class MainActivity extends BaseListActivity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
 
@@ -27,6 +29,8 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
 
         //LoginManager.getInstance(this).dealData();
@@ -85,7 +89,7 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("LeakCanary检测内存泄漏及解决办法", "LeakCanary检测内存泄漏及解决办法", LeakCanaryActivity.class),
             new DemoInfo("测试DemoActivity", "测试DemoActivity", DemoActivity.class),
             new DemoInfo("自定义View Demo", "自定义View多种例子", CustomBaseActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("FragmentActivity测试", "FragmentActivity测试", FragmentDemoActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),
             new DemoInfo("测试", "测试", OkhttpActivity.class),

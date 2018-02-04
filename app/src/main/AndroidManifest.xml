@@ -47,7 +47,8 @@
         <activity android:name=".activity.DemoActivity" />
         <activity android:name=".activity.BActivity" />
         <activity android:name=".view.CustomBaseActivity" />
-        <activity android:name=".view.CustomViewActivity"></activity>
+        <activity android:name=".view.CustomViewActivity" />
+        <activity android:name=".fragment.FragmentDemoActivity"></activity>
     </application>
 
 </manifest>
