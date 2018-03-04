@@ -2,6 +2,7 @@ package com.alizhezi.demo.base;
 
 import android.app.Application;
 import android.os.StrictMode;
+import android.util.Log;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -29,6 +30,9 @@ public class AliZheZiApplication extends Application {
        // enabledStrictMode();
 
        // refWatcher = LeakCanary.install(this);
+
+
+        Log.e("AliZheZiApplication","thread:"+Thread.currentThread().getName());
 
     }
 

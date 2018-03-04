@@ -1,5 +1,7 @@
 package com.alizhezi.demo;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +32,10 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+        int heapSize = manager.getMemoryClass();
 
+        Log.e(TAG,"最大内存："+heapSize);
 
 
         //LoginManager.getInstance(this).dealData();
@@ -90,22 +95,22 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("测试DemoActivity", "测试DemoActivity", DemoActivity.class),
             new DemoInfo("自定义View Demo", "自定义View多种例子", CustomBaseActivity.class),
             new DemoInfo("FragmentActivity测试", "FragmentActivity测试", FragmentDemoActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
-            new DemoInfo("测试", "测试", OkhttpActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("测试", "测试", MainActivity.class),
 
             //new DemoInfo("自定义View", "自定义View 使用demo", CustomActivity.class),
     };

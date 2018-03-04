@@ -4,12 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.alizhezi.demo.activity.DemoActivity">
 
 
     <Button
         android:onClick="start"
         android:text="开启BActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="startDemo"
+        android:text="开启Demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="startMain"
+        android:text="返回首页"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

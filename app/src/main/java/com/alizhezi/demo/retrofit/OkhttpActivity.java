@@ -36,14 +36,8 @@ public class OkhttpActivity extends AppCompatActivity {
 
         Call call = mOkHttpClient.newCall(request);
 
-        /***
-         * 同步请求
-         */
-        try {
-            Response execute = call.execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //call.execute(); 同步方法
+
     }
 
     /****

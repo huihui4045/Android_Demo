@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.alizhezi.demo.MainActivity;
 import com.alizhezi.demo.R;
 import com.alizhezi.demo.base.BaseActivity;
 
@@ -18,5 +19,13 @@ public class DemoActivity extends BaseActivity {
     public void start(View view){
 
         startActivity(new Intent(this,BActivity.class));
+    }
+
+    public void startDemo(View view){
+        startActivity(new Intent(this,DemoActivity.class));
+    }
+
+    public void startMain(View view){
+        startActivity(new Intent(this,MainActivity.class));
     }
 }
