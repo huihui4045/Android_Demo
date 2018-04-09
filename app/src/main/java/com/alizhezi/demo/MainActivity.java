@@ -20,6 +20,7 @@ import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
 import com.alizhezi.demo.retrofit.OkhttpActivity;
 import com.alizhezi.demo.retrofit.RetrofitActivity;
+import com.alizhezi.demo.rxjava.RxJavaActivity;
 import com.alizhezi.demo.view.CustomBaseActivity;
 
 
@@ -95,7 +96,7 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("测试DemoActivity", "测试DemoActivity", DemoActivity.class),
             new DemoInfo("自定义View Demo", "自定义View多种例子", CustomBaseActivity.class),
             new DemoInfo("FragmentActivity测试", "FragmentActivity测试", FragmentDemoActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("RxJavaActivity测试", "RxJavaActivity测试", RxJavaActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
