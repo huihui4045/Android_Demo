@@ -54,7 +54,8 @@
         <activity android:name=".view.CustomBaseActivity" />
         <activity android:name=".view.CustomViewActivity" />
         <activity android:name=".fragment.FragmentDemoActivity" />
-        <activity android:name=".rxjava.RxJavaActivity"></activity>
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".list.ListDemoActivity"></activity>
     </application>
 
 </manifest>

@@ -34,6 +34,7 @@ public class AliZheZiApplication extends Application {
 
         Log.e("AliZheZiApplication","thread:"+Thread.currentThread().getName());
 
+
     }
 
 
