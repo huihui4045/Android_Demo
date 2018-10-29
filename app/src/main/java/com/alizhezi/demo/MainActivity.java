@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import com.alizhezi.demo.activity.DemoActivity;
+import com.alizhezi.demo.activity.MainStateActivity;
 import com.alizhezi.demo.adapter.DemoListAdapter;
 import com.alizhezi.demo.adapter.DemoListAdapter.DemoInfo;
 import com.alizhezi.demo.base.BaseListActivity;
@@ -99,7 +99,7 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("FragmentActivity测试", "FragmentActivity测试", FragmentDemoActivity.class),
             new DemoInfo("RxJavaActivity测试", "RxJavaActivity测试", RxJavaActivity.class),
             new DemoInfo("listView测试", "listView测试", ListDemoActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
+        new DemoInfo("MainStateActivity", "测试", MainStateActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
