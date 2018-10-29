@@ -21,7 +21,16 @@ public class BaseActivity  extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         Log.e(TAG,"onCreate");
+
+        if (null != savedInstanceState) {
+
+            Log.e(TAG, "onCreate called. get param: " + savedInstanceState.getInt("param"));
+        }
+
+
+
     }
 
     @Override
