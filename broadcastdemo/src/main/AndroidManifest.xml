@@ -38,6 +38,32 @@
                 <action android:name="com.alizhezi.data.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
+
+
+        <receiver android:name=".OneReceiver">
+
+            <intent-filter>
+                <action android:name="com.alizhezi.data.TEST_BROADCAST" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name=".TwoReceiver">
+
+            <intent-filter>
+                <action android:name="com.alizhezi.data.TEST_BROADCAST" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name=".ThreeReceiver">
+
+            <intent-filter>
+                <action android:name="com.alizhezi.data.TEST_BROADCAST" />
+            </intent-filter>
+
+        </receiver>
+
     </application>
 
 </manifest>

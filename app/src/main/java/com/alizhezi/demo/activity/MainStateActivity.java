@@ -4,13 +4,19 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import com.alizhezi.demo.IAdditionService;
 import com.alizhezi.demo.MainActivity;
 import com.alizhezi.demo.R;
 import com.alizhezi.demo.base.BaseActivity;
@@ -52,6 +58,29 @@ public class MainStateActivity extends BaseActivity implements View.OnClickListe
         Log.e(TAG, "onSaveInstanceState:");
     }
 
+    private IAdditionService mIAdditionService;
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+
+            mIAdditionService = IAdditionService.Stub.asInterface(service);
+
+            try {
+                int add = mIAdditionService.add(4, 5);
+
+                Log.e(TAG, "返回的结果：" + add);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
     @Override
     public void onClick(View v) {
 
@@ -68,6 +97,22 @@ public class MainStateActivity extends BaseActivity implements View.OnClickListe
                 Toast.makeText(MainStateActivity.this, "hide", Toast.LENGTH_SHORT).show();
 
                 mManager.cancel(1);
+
+                break;
+
+            case R.id.bind_service:
+
+                Intent intent = new Intent("com.alizhezi.demo.AidlService");
+
+                intent.setPackage("com.alizhezi.demo");
+
+                bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+
+                break;
+
+            case R.id.unbind_service:
+
+                unbindService(mConnection);
 
                 break;
         }
