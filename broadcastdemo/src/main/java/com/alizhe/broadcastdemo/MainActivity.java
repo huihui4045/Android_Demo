@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         intent=new IntentFilter(action);
 
         intent.setPriority(500);
-
     }
 
     @Override
@@ -77,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
         //mLocalBroadcastManager.sendBroadcast(intent);
 
+        Intent intent1 = new Intent("com.alizhezi.data.TEST_BROADCAST");
 
+        // intent1.setComponent(new ComponentName("com.alizhe.broadcastdemo", "com.alizhe.broadcastdemo.TwoReceiver"));
+        intent1.setPackage("com.alizhe.broadcastdemo");
+
+        sendBroadcast(intent1);
 
 
 
