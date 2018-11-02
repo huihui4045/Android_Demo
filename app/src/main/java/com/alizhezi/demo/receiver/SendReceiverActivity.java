@@ -1,5 +1,6 @@
 package com.alizhezi.demo.receiver;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ public class SendReceiverActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_send_receiver);
 
         mNetworkStateReceiver = new NetworkStateReceiver();
+
+        Context applicationContext = getApplicationContext();
     }
 
     @Override

@@ -31,7 +31,7 @@ public class FragmentDemoActivity extends BaseActivity implements View.OnClickLi
 
         transaction = manager.beginTransaction();
 
-       /* if (mAFragment==null){
+        if (mAFragment == null) {
 
             mAFragment=new AFragment();
 
@@ -43,7 +43,7 @@ public class FragmentDemoActivity extends BaseActivity implements View.OnClickLi
 
         }
 
-        transaction.commit();*/
+        transaction.commit();
 
     }
 
