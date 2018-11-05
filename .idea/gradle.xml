@@ -8,13 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/android_viewdemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/broadcastdemo" />
-            <option value="$PROJECT_DIR$/handlerdemo" />
-            <option value="$PROJECT_DIR$/schemedemo" />
-            <option value="$PROJECT_DIR$/servicedemo" />
-            <option value="$PROJECT_DIR$/touchevent" />
+            <option value="$PROJECT_DIR$/tablibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
