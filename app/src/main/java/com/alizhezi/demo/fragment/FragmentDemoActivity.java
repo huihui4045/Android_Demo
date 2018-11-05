@@ -31,19 +31,19 @@ public class FragmentDemoActivity extends BaseActivity implements View.OnClickLi
 
         transaction = manager.beginTransaction();
 
-       /* if (mAFragment==null){
-
-            mAFragment=new AFragment();
-
-
-            transaction.add(R.id.fragment_content,mAFragment,fragmentNames[0]);
-
-            Log.e("mAFragment:","mAFragment is null");
-
-
-        }
-
-        transaction.commit();*/
+        //if (mAFragment == null) {
+        //
+        //    mAFragment=new AFragment();
+        //
+        //
+        //    transaction.add(R.id.fragment_content,mAFragment,fragmentNames[0]);
+        //
+        //    Log.e("mAFragment:","mAFragment is null");
+        //
+        //
+        //}
+        //
+        //transaction.commit();
 
     }
 
@@ -92,8 +92,7 @@ public class FragmentDemoActivity extends BaseActivity implements View.OnClickLi
 
                     mBFragment=new BFragment();
 
-                    transaction.replace(R.id.fragment_content,mBFragment,fragmentNames[1]);
-
+                    transaction.add(R.id.fragment_content, mBFragment, fragmentNames[1]);
                     transaction.addToBackStack(fragmentNames[1]);
 
                     Log.e("mBFragment:","mBFragment is null");

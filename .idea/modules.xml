@@ -3,15 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android_Demo.iml" filepath="$PROJECT_DIR$/Android_Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android_viewdemo/android_viewdemo.iml" filepath="$PROJECT_DIR$/android_viewdemo/android_viewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcastdemo/broadcastdemo.iml" filepath="$PROJECT_DIR$/broadcastdemo/broadcastdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/broadcastdemo/broadcastdemo.iml" filepath="$PROJECT_DIR$/broadcastdemo/broadcastdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/handlerdemo/handlerdemo.iml" filepath="$PROJECT_DIR$/handlerdemo/handlerdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/schemedemo/schemedemo.iml" filepath="$PROJECT_DIR$/schemedemo/schemedemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/tablibrary/tablibrary.iml" filepath="$PROJECT_DIR$/tablibrary/tablibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/touchevent/touchevent.iml" filepath="$PROJECT_DIR$/touchevent/touchevent.iml" />
     </modules>
   </component>
 </project>

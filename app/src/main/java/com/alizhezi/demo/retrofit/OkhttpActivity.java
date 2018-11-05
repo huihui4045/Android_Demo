@@ -9,6 +9,7 @@ import com.alizhezi.demo.R;
 
 import java.io.IOException;
 
+import java.util.concurrent.TimeUnit;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -25,6 +26,8 @@ public class OkhttpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        OkHttpClient client = new OkHttpClient.Builder().readTimeout(5, TimeUnit.SECONDS).build();
 
 
         Request.Builder builder=new Request.Builder();

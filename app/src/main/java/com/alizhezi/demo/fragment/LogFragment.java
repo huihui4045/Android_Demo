@@ -55,9 +55,16 @@ public class LogFragment extends Fragment {
     }
 
     @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+
+        Log.e(TAG, "onHiddenChanged:  " + hidden);
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
-        Log.e(TAG,"onStart");
+        Log.e(TAG, "onStart");
     }
 
     @Override
