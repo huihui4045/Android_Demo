@@ -13,4 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getExecuteHttp"
+        android:text="同步get请求"
+        />
+
 </LinearLayout>
