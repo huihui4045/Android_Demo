@@ -29,8 +29,8 @@ public class DaoSession extends AbstractDaoSession {
     private final StudentDao studentDao;
     private final UserDao userDao;
 
-    public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
-            daoConfigMap) {
+    public DaoSession(Database db, IdentityScopeType type,
+        Map<Class<? extends AbstractDao<?, ?>>, DaoConfig> daoConfigMap) {
         super(db);
 
         studentDaoConfig = daoConfigMap.get(StudentDao.class).clone();
@@ -45,7 +45,7 @@ public class DaoSession extends AbstractDaoSession {
         registerDao(Student.class, studentDao);
         registerDao(User.class, userDao);
     }
-    
+
     public void clear() {
         studentDaoConfig.clearIdentityScope();
         userDaoConfig.clearIdentityScope();
@@ -58,5 +58,4 @@ public class DaoSession extends AbstractDaoSession {
     public UserDao getUserDao() {
         return userDao;
     }
-
 }

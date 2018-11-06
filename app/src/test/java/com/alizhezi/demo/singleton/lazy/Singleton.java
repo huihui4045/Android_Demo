@@ -5,19 +5,18 @@ package com.alizhezi.demo.singleton.lazy;
  */
 public class Singleton {
 
-
-    private static  Singleton instance=null;
+    private static Singleton instance = null;
 
     private Singleton() {
     }
 
-    public static Singleton getInstance(){
+    public static Singleton getInstance() {
 
-        if (instance==null){
+        if (instance == null) {
 
-            instance=new Singleton();
+            instance = new Singleton();
         }
 
-        return  instance;
+        return instance;
     }
 }

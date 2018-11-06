@@ -5,40 +5,34 @@ import java.util.Map;
 
 public class Connection {
 
-    private static int MAX=5;
+    private static int MAX = 5;
 
-    private static Map<Integer,Connection> map=new HashMap<>();
+    private static Map<Integer, Connection> map = new HashMap<>();
 
-    private static int key=1;
+    private static int key = 1;
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
 
+        Connection conn = map.get(key);
 
-        Connection conn=map.get(key);
+        if (conn == null) {
 
+            synchronized (Connection.class) {
 
-        if(conn==null){
+                if (conn == null) {
 
+                    conn = new Connection();
 
-            synchronized (Connection.class){
-
-                if (conn==null){
-
-
-                    conn=new Connection();
-
-                    map.put(key,conn);
+                    map.put(key, conn);
                 }
             }
-
         }
 
+        if (++key > MAX) {
 
-        if (++key>MAX){
-
-            key=1;
+            key = 1;
         }
 
-        return  conn;
+        return conn;
     }
 }

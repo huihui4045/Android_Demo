@@ -115,6 +115,14 @@ public class MainStateActivity extends BaseActivity implements View.OnClickListe
                 unbindService(mConnection);
 
                 break;
+
+            case R.id.start_app:
+
+
+
+
+
+                break;
         }
     }
 

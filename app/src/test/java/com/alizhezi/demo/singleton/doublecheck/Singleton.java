@@ -13,26 +13,24 @@ public class Singleton {
      *
      *   会屏蔽虚拟机一些优化代码
      */
-    private volatile static Singleton instance=null;
+    private volatile static Singleton instance = null;
 
     private Singleton() {
     }
 
-    public static Singleton getInstance(){
+    public static Singleton getInstance() {
 
-        if (instance==null){
+        if (instance == null) {
 
-            synchronized (Singleton.class){
+            synchronized (Singleton.class) {
 
-                if (instance==null){
+                if (instance == null) {
 
-                    instance=new Singleton();
+                    instance = new Singleton();
                 }
-
             }
-
         }
 
-        return  instance;
+        return instance;
     }
 }
