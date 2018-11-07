@@ -70,20 +70,19 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".receiver.SendReceiverActivity"></activity>
+        <activity android:name=".receiver.SendReceiverActivity" />
 
         <receiver android:name=".receiver.NetworkStateReceiver">
-
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
 
-                <category android:name="android.intent.category.HOME"></category>
-
+                <category android:name="android.intent.category.HOME" />
             </intent-filter>
-
-
         </receiver>
+
+        <activity android:name=".aop.AOPActivity" />
+        <activity android:name=".database.DataBaseActivity"></activity>
     </application>
 
 </manifest>
