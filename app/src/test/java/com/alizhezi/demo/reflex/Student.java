@@ -1,11 +1,17 @@
 package com.alizhezi.demo.reflex;
 
-public class Student {
+public class Student extends Person {
 
     public String id;
     protected int age;
     int weight;
-    private String name;
+    private static String address = "默认地址";
+    private String name = "默认名字";
+
+    public static void prientAddress() {
+
+        System.out.println("地址：" + address);
+    }
 
     public Student() {
     }
@@ -46,9 +52,19 @@ public class Student {
         System.out.println("protected void eat");
     }
 
-    public void study() {
+    private static void study(String type) {
 
-        System.out.println("public void study");
+        System.out.println("public void study  " + type);
+    }
+
+    private void love(String name) {
+
+        System.out.println(this.name + "  love:" + name);
+    }
+
+    private String loveTo(String name) {
+
+        return this.name + "  love:" + name;
     }
 
     @Override

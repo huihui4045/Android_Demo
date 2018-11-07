@@ -20,14 +20,6 @@ public class StudentDao extends AbstractDao<Student, Long> {
 
     public static final String TABLENAME = "STUDENT";
 
-    public StudentDao(DaoConfig config) {
-        super(config);
-    }
-
-    public StudentDao(DaoConfig config, DaoSession daoSession) {
-        super(config, daoSession);
-    }
-
     /** Creates the underlying database table. */
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists ? "IF NOT EXISTS " : "";
@@ -37,10 +29,12 @@ public class StudentDao extends AbstractDao<Student, Long> {
                        "\"SEX\" INTEGER NOT NULL );"); // 2: sex
     }
 
-    /** Drops the underlying database table. */
-    public static void dropTable(Database db, boolean ifExists) {
-        String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"STUDENT\"";
-        db.execSQL(sql);
+    public StudentDao(DaoConfig config) {
+        super(config);
+    }
+
+    public StudentDao(DaoConfig config, DaoSession daoSession) {
+        super(config, daoSession);
     }
 
     @Override
@@ -53,6 +47,12 @@ public class StudentDao extends AbstractDao<Student, Long> {
             stmt.bindString(2, name);
         }
         stmt.bindLong(3, entity.getSex());
+    }
+
+    /** Drops the underlying database table. */
+    public static void dropTable(Database db, boolean ifExists) {
+        String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"STUDENT\"";
+        db.execSQL(sql);
     }
 
     @Override
@@ -89,7 +89,13 @@ public class StudentDao extends AbstractDao<Student, Long> {
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setSex(cursor.getInt(offset + 2));
     }
-     
+
+    @Override
+    protected final Long updateKeyAfterInsert(Student entity, long rowId) {
+        entity.setId(rowId);
+        return rowId;
+    }
+    
     @Override
     public Long getKey(Student entity) {
         if (entity != null) {
@@ -97,12 +103,6 @@ public class StudentDao extends AbstractDao<Student, Long> {
         } else {
             return null;
         }
-    }
-
-    @Override
-    protected final Long updateKeyAfterInsert(Student entity, long rowId) {
-        entity.setId(rowId);
-        return rowId;
     }
 
     /**

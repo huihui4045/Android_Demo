@@ -20,14 +20,6 @@ public class UserDao extends AbstractDao<User, Long> {
 
     public static final String TABLENAME = "USER";
 
-    public UserDao(DaoConfig config) {
-        super(config);
-    }
-
-    public UserDao(DaoConfig config, DaoSession daoSession) {
-        super(config, daoSession);
-    }
-
     /** Creates the underlying database table. */
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists ? "IF NOT EXISTS " : "";
@@ -37,10 +29,12 @@ public class UserDao extends AbstractDao<User, Long> {
                        "\"AGE\" INTEGER NOT NULL );"); // 2: age
     }
 
-    /** Drops the underlying database table. */
-    public static void dropTable(Database db, boolean ifExists) {
-        String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"USER\"";
-        db.execSQL(sql);
+    public UserDao(DaoConfig config) {
+        super(config);
+    }
+
+    public UserDao(DaoConfig config, DaoSession daoSession) {
+        super(config, daoSession);
     }
 
     @Override
@@ -53,6 +47,12 @@ public class UserDao extends AbstractDao<User, Long> {
             stmt.bindString(2, name);
         }
         stmt.bindLong(3, entity.getAge());
+    }
+
+    /** Drops the underlying database table. */
+    public static void dropTable(Database db, boolean ifExists) {
+        String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"USER\"";
+        db.execSQL(sql);
     }
 
     @Override
@@ -89,7 +89,13 @@ public class UserDao extends AbstractDao<User, Long> {
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setAge(cursor.getInt(offset + 2));
     }
-     
+
+    @Override
+    protected final Long updateKeyAfterInsert(User entity, long rowId) {
+        entity.setId(rowId);
+        return rowId;
+    }
+    
     @Override
     public Long getKey(User entity) {
         if (entity != null) {
@@ -97,12 +103,6 @@ public class UserDao extends AbstractDao<User, Long> {
         } else {
             return null;
         }
-    }
-
-    @Override
-    protected final Long updateKeyAfterInsert(User entity, long rowId) {
-        entity.setId(rowId);
-        return rowId;
     }
 
     /**
