@@ -9,12 +9,15 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.alizhezi.demo.activity.DemoActivity;
 import com.alizhezi.demo.activity.MainStateActivity;
 import com.alizhezi.demo.adapter.DemoListAdapter;
 import com.alizhezi.demo.adapter.DemoListAdapter.DemoInfo;
+import com.alizhezi.demo.aop.AOPActivity;
 import com.alizhezi.demo.base.BaseListActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
+import com.alizhezi.demo.database.DataBaseActivity;
 import com.alizhezi.demo.fragment.FragmentDemoActivity;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
@@ -102,8 +105,8 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("listView测试", "listView测试", ListDemoActivity.class),
         new DemoInfo("MainStateActivity", "测试", MainStateActivity.class),
         new DemoInfo("广播", "广播", SendReceiverActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("AOPActivity", "面向AOP切面编程", AOPActivity.class),
+            new DemoInfo("DataBaseActivity", "数据库框架设计", DataBaseActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
