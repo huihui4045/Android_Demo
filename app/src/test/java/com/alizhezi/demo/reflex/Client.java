@@ -129,6 +129,16 @@ public class Client {
         Student.prientAddress();
     }
 
+    @Test
+    public void testMyFiled() {
+
+        Student student = new Student();
+
+        RefInvoke.setFieldObject(student, "address", "新地址");
+
+        Student.prientAddress();
+    }
+
     private Class getDemoClass() {
         try {
             return Class.forName("com.alizhezi.demo.reflex.Student");

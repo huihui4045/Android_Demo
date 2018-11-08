@@ -34,6 +34,32 @@ public class RefInvoke {
         return null;
     }
 
+    /****
+     * 一个参数
+     * @param className
+     * @return
+     */
+    public static Object createObject(String className) {
+
+        Class[] parameterTypes = new Class[] {};
+
+        Object[] parameterValue = new Object[] {};
+
+        try {
+            Class<?> clz = Class.forName(className);
+
+            Constructor<?> constructor = clz.getDeclaredConstructor(parameterTypes);
+
+            constructor.setAccessible(true);
+
+            return constructor.newInstance(parameterValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     /*****
      * 执行实例方法
      * @param obj
@@ -108,7 +134,7 @@ public class RefInvoke {
     /***
      * 设置filed的值
      * @param className
-     * @param obj
+     * @param  obj
      * @param filedName
      * @param filedValue
      */
@@ -119,6 +145,19 @@ public class RefInvoke {
             Class<?> clz = Class.forName(className);
 
             Field field = clz.getDeclaredField(filedName);
+            field.setAccessible(true);
+
+            field.set(obj, filedValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setFieldObject(Object obj, String filedName, Object filedValue) {
+
+        try {
+
+            Field field = obj.getClass().getDeclaredField(filedName);
             field.setAccessible(true);
 
             field.set(obj, filedValue);

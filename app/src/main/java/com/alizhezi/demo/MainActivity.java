@@ -19,6 +19,7 @@ import com.alizhezi.demo.base.BaseListActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
 import com.alizhezi.demo.database.DataBaseActivity;
 import com.alizhezi.demo.fragment.FragmentDemoActivity;
+import com.alizhezi.demo.hook.HookHelper;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
 import com.alizhezi.demo.list.ListDemoActivity;
@@ -37,6 +38,8 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        HookHelper.hookPackageManager(this);
 
         ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
         int heapSize = manager.getMemoryClass();
