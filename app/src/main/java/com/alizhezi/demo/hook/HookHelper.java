@@ -10,6 +10,12 @@ public class HookHelper {
 
     private static String TAG = "HookHelper";
 
+    public static void hookStartActivity(Class clz, Object object, String fieldName,
+        Object fieldValue) {
+
+        RefInvoke.setFieldObject(clz, object, fieldName, fieldValue);
+    }
+
     public static void hookPackageManager(Context context) {
 
         //获取全局的CurrentActivityThread

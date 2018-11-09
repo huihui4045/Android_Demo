@@ -1,20 +1,18 @@
 package com.alizhezi.demo.retrofit;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-
-import com.alizhezi.demo.leak.IpService;
 import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 import com.alizhezi.demo.covert.FastJsonConverterFactory;
-
+import com.alizhezi.demo.leak.IpService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class RetrofitActivity extends AppCompatActivity {
+public class RetrofitActivity extends BaseActivity {
 
     private static final String url="http://ip.taobao.com/service/getIpInfo.php?ip=63.223.108.42";
 

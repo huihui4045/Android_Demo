@@ -1,17 +1,15 @@
 package com.alizhezi.demo.butterknife;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.alizhezi.demo.R;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 
-public class ButterKnifeActivity extends AppCompatActivity {
+public class ButterKnifeActivity extends BaseActivity {
 
     @BindView(R.id.text)
     Button mTest;

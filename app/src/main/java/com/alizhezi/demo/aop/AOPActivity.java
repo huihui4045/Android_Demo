@@ -1,11 +1,10 @@
 package com.alizhezi.demo.aop;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 
-public class AOPActivity extends AppCompatActivity {
+public class AOPActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

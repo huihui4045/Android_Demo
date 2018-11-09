@@ -1,10 +1,17 @@
 package com.alizhezi.demo.base;
 
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import com.alizhezi.demo.hook.AMSHookHelper;
+import com.alizhezi.demo.hook.EvilInstrumentation;
+import com.alizhezi.demo.hook.HookHelper;
+import com.alizhezi.demo.hook.RefInvoke;
 
 /**
  * Created by gavin
@@ -16,10 +23,28 @@ public class BaseActivity  extends AppCompatActivity {
 
     protected String TAG=this.getClass().getSimpleName();
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+
+        try {
+            AMSHookHelper.hookActivityThreadH();
+            AMSHookHelper.hookStartActivityByAMS();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Instrumentation mInstrumentation =
+            (Instrumentation)RefInvoke.getFieldObject(Activity.class, this, "mInstrumentation");
+
+        Instrumentation instrumentation = new EvilInstrumentation(mInstrumentation);
+
+        HookHelper.hookStartActivity(Activity.class, this, "mInstrumentation", instrumentation);
 
 
         Log.e(TAG,"onCreate");

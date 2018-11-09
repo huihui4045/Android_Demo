@@ -1,16 +1,15 @@
 package com.alizhezi.demo.database;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
-
 import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 import com.alizhezi.demo.database.bean.User;
 import com.alizhezi.demo.database.db.BaseDao;
 import com.alizhezi.demo.database.db.BaseDaoFactory;
 
-public class DataBaseActivity extends AppCompatActivity {
+public class DataBaseActivity extends BaseActivity {
 
     BaseDaoFactory factory;
 

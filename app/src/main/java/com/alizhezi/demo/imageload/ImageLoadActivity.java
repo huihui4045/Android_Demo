@@ -4,23 +4,21 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.alizhezi.demo.R;
-import com.jakewharton.picasso.OkHttp3Downloader;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
+import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import okhttp3.OkHttpClient;
 
-public class ImageLoadActivity extends AppCompatActivity {
+public class ImageLoadActivity extends BaseActivity {
     private String TAG=this.getClass().getSimpleName();
 
     int count;

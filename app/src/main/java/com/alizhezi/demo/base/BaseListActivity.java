@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-
 import com.alizhezi.demo.MainActivity;
 import com.alizhezi.demo.adapter.DemoListAdapter;
 
@@ -20,7 +18,8 @@ import com.alizhezi.demo.adapter.DemoListAdapter;
  * Email:molu_clown@163.com
  */
 
-public abstract class BaseListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public abstract class BaseListActivity extends BaseActivity
+    implements AdapterView.OnItemClickListener {
 
     private ListView mListView;
 
@@ -71,9 +70,11 @@ public abstract class BaseListActivity extends AppCompatActivity implements Adap
             intent=new Intent(BaseListActivity.this, MainActivity.class);
         }
 
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //
+        //getApplicationContext().startActivity(intent);
 
-
-        this.startActivity(intent);
+        startActivity(intent);
     }
     @Override
     protected void onResume() {

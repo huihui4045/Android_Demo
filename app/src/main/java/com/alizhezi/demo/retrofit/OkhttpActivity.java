@@ -1,15 +1,12 @@
 package com.alizhezi.demo.retrofit;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
 import com.alizhezi.demo.R;
-
+import com.alizhezi.demo.base.BaseActivity;
 import java.io.File;
 import java.io.IOException;
-
 import java.util.concurrent.TimeUnit;
 import okhttp3.Cache;
 import okhttp3.Call;
@@ -18,7 +15,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class OkhttpActivity extends AppCompatActivity {
+public class OkhttpActivity extends BaseActivity {
 
     private OkHttpClient mOkHttpClient = null;
 

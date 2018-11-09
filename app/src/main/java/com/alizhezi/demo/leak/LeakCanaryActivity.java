@@ -3,12 +3,11 @@ package com.alizhezi.demo.leak;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
 import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 
-public class LeakCanaryActivity extends AppCompatActivity {
+public class LeakCanaryActivity extends BaseActivity {
 
    // private Handler mHandler=new Handler();
     private TextView textView;

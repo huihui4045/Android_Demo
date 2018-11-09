@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.alizhezi.demo.R;
+import com.alizhezi.demo.base.BaseActivity;
 
-public class SendReceiverActivity extends AppCompatActivity implements View.OnClickListener {
+public class SendReceiverActivity extends BaseActivity implements View.OnClickListener {
 
     private NetworkStateReceiver mNetworkStateReceiver;
 
