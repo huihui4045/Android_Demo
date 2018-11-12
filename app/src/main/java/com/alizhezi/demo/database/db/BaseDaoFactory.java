@@ -23,12 +23,19 @@ public class BaseDaoFactory {
         sqLiteDatabase = SQLiteDatabase.openOrCreateDatabase(sqLiteDatabasePath, null);
     }
 
-    public <T> BaseDao<T> getBaseDao(Class<T> entityClass){
+    public <T extends BaseDao<M>,M> T getBaseDao(Class<T> daoClass ,Class<M> entityClass){
 
         BaseDao baseDao=null;
 
         try {
-             baseDao = BaseDao.class.newInstance();
+            if (daoClass==null){
+
+                baseDao=BaseDao.class.newInstance();
+
+            }else {
+
+                baseDao =daoClass.newInstance();
+            }
 
              baseDao.init(sqLiteDatabase,entityClass);
         } catch (InstantiationException e) {
@@ -37,6 +44,12 @@ public class BaseDaoFactory {
             e.printStackTrace();
         }
 
-        return baseDao;
+        return (T)baseDao;
+    }
+
+    public <T extends BaseDao<M>,M> T getBaseDao(Class<M> entityClass){
+
+
+        return (T) getBaseDao(BaseDao.class,entityClass);
     }
 }
