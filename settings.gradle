@@ -1,1 +1,1 @@
-include ':app',   ':tablibrary', ':hostapp', ':pluginapp','broadcastdemo'
+include ':app',   ':tablibrary', ':hostapp', ':pluginapp', ':pluginlibrary','broadcastdemo'
