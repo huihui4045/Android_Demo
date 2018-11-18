@@ -9,4 +9,11 @@ public class Dynamic implements IDynamic {
     public String getStringForResId(Context context) {
         return context.getResources().getString(R.string.plugin_app_hello_world);
     }
+
+    @Override
+    public String getContent(){
+
+
+        return "来自插件APK";
+    }
 }

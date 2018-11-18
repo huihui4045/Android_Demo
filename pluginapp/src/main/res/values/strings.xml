@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">PluginApp</string>
-    <string name="plugin_app_hello_world"></string>
+    <string name="plugin_app_hello_world">plugin_app_hello_world</string>
 </resources>

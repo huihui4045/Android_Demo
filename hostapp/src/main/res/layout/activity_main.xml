@@ -23,4 +23,11 @@
 
         />
 
+    <Button
+        android:id="@+id/start_plugin"
+        android:text="跳转到插件activity"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

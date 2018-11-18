@@ -6,7 +6,7 @@ android {
 
 
   defaultConfig {
-    applicationId "e.y.hostapp"
+    applicationId "com.alizhezi.host"
     minSdkVersion 15
     targetSdkVersion 27
     versionCode 1
