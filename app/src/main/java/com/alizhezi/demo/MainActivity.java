@@ -17,6 +17,7 @@ import com.alizhezi.demo.adapter.DemoListAdapter.DemoInfo;
 import com.alizhezi.demo.aop.AOPActivity;
 import com.alizhezi.demo.base.BaseListActivity;
 import com.alizhezi.demo.butterknife.ButterKnifeActivity;
+import com.alizhezi.demo.dagger.DaggerDemoActivity;
 import com.alizhezi.demo.database.DataBaseActivity;
 import com.alizhezi.demo.fragment.FragmentDemoActivity;
 import com.alizhezi.demo.hook.HookHelper;
@@ -45,37 +46,6 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
         int heapSize = manager.getMemoryClass();
 
         Log.e(TAG,"最大内存："+heapSize);
-
-
-        //LoginManager.getInstance(this).dealData();
-
-       /* Uri uri = getIntent().getData();
-        if (uri != null) {
-            // 完整的url信息
-            String url = uri.toString();
-            Log.e(TAG, "url: " + uri);
-            // scheme部分
-            String scheme = uri.getScheme();
-            Log.e(TAG, "scheme: " + scheme);
-            // host部分
-            String host = uri.getHost();
-            Log.e(TAG, "host: " + host);
-            //port部分
-            int port = uri.getPort();
-            Log.e(TAG, "host: " + port);
-            // 访问路劲
-            String path = uri.getPath();
-            Log.e(TAG, "path: " + path);
-            List<String> pathSegments = uri.getPathSegments();
-            // Query部分
-            String query = uri.getQuery();
-            Log.e(TAG, "query: " + query);
-            //获取指定参数值
-            String goodsId = uri.getQueryParameter("goodsId");
-            Log.e(TAG, "goodsId: " + goodsId);
-        }
-*/
-
        mListView=getListView();
         mListView.setOnScrollListener(this);
 
@@ -110,7 +80,7 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
         new DemoInfo("广播", "广播", SendReceiverActivity.class),
             new DemoInfo("AOPActivity", "面向AOP切面编程", AOPActivity.class),
             new DemoInfo("DataBaseActivity", "数据库框架设计", DataBaseActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("DaggerDemo", "DaggerDemo", DaggerDemoActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
