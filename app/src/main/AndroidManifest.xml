@@ -15,8 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dagger.DaggerDemoActivity"></activity>
-        <!-- 要想在别的App上能成功调起APP,必须添加过滤器 xl://goods:8888/goodsDetail?goodsId=10011002 -->
+        <activity
+            android:name=".navigation.BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation"></activity>
+        <activity android:name=".navigation.NavigationActivity" />
+        <activity android:name=".dagger.DaggerDemoActivity" /> <!-- 要想在别的App上能成功调起APP,必须添加过滤器 xl://goods:8888/goodsDetail?goodsId=10011002 -->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">

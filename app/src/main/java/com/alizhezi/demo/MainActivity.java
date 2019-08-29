@@ -24,6 +24,8 @@ import com.alizhezi.demo.hook.HookHelper;
 import com.alizhezi.demo.imageload.ImageLoadActivity;
 import com.alizhezi.demo.leak.LeakCanaryActivity;
 import com.alizhezi.demo.list.ListDemoActivity;
+import com.alizhezi.demo.navigation.BottomNavigationActivity;
+import com.alizhezi.demo.navigation.NavigationActivity;
 import com.alizhezi.demo.receiver.SendReceiverActivity;
 import com.alizhezi.demo.retrofit.OkhttpActivity;
 import com.alizhezi.demo.retrofit.RetrofitActivity;
@@ -81,8 +83,8 @@ public class MainActivity extends BaseListActivity implements AdapterView.OnItem
             new DemoInfo("AOPActivity", "面向AOP切面编程", AOPActivity.class),
             new DemoInfo("DataBaseActivity", "数据库框架设计", DataBaseActivity.class),
             new DemoInfo("DaggerDemo", "DaggerDemo", DaggerDemoActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
-            new DemoInfo("测试", "测试", MainActivity.class),
+            new DemoInfo("底部导航", "底部导航", BottomNavigationActivity.class),
+            new DemoInfo("Navigation组件使用", "Navigation组件使用", NavigationActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
             new DemoInfo("测试", "测试", MainActivity.class),
